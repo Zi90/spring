@@ -8,6 +8,7 @@
     <h1>Boot Register page</h1>
   <hr>
 
+  <div>
   <form action="/board/register" method="post">
   <div class="mb-3">
     <label for="t" class="form-label">Title</label>
@@ -21,6 +22,18 @@
     <label for="c" class="form-label">Content</label>
     <textarea class="form-control" name="content" id="c" rows="3"></textarea>
   </div>
-    <button type="submit" class="btn btn-primary">register</button>
-  </form>
+    <!-- file 추가 라인 -->
+    <div class="mb-3">
+      <label for="file" class="form-label">File</label>
+      <input type="file" class="form-control" name="files" id="file" multiple style="display:none;">
+    </div>
+    <button type="button" id="trigger" class="btn btn-primary">File Upload</button>
+
+    <!-- file 출력 라인 -->
+    <div class="input-group mb-3" id="fileZone"></div>
+
+      <button type="submit" class="btn btn-primary" id="regBtn">register</button>
+    </form>
+  <script th:src="@{/js/boardRegister.js}"></script>
+  </div>
 </div>
